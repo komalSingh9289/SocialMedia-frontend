@@ -1,7 +1,4 @@
-import { GoPaperAirplane } from "react-icons/go";
-import { IoIosHeartEmpty } from "react-icons/io";
-import { IoPaperPlaneOutline } from "react-icons/io5";
-import { LiaCommentDots } from "react-icons/lia";
+
 import { MdMoreHoriz } from "react-icons/md";
 
 const Feeds = () => {

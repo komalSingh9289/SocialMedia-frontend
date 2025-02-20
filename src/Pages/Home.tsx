@@ -2,11 +2,15 @@ import Feeds from "../Components/Feeds"
 import FollowingList from "../Components/FollowingList"
 import Sidebar from "../Components/Sidebar"
 import Stories from "../Components/Stories"
+import ModalManager from "../Modals/ModalManager"
+
 
 const Home = () => {
     return (
+
         <div className="flex">
             <Sidebar />
+            <ModalManager />
             <div className=" lg:ml-64 w-full grid grid-cols-3 gap-2 h-screen">
                 <div className="col-span-2 p-4">
                     <Stories />
@@ -38,6 +42,7 @@ const Home = () => {
 
             </div>
         </div>
+ 
     )
 }
 

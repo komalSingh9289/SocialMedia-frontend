@@ -1,5 +1,8 @@
+import { useDispatch } from "react-redux";
+import { openModal } from "../Slice/modalSlice";
 
 const Sidebar = () => {
+    const dispatch = useDispatch();
     return (
         <>
             <div id="hs-sidebar-content-push" className="hs-overlay [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 w-64
@@ -35,7 +38,7 @@ const Sidebar = () => {
                                     </a>
                                 </li>
 
-                                <li>
+                                <li onClick={()=> dispatch(openModal("searchModal"))}>
                                     <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
                                         <svg
                                             className="size-4"
@@ -121,7 +124,7 @@ const Sidebar = () => {
                                     </a>
                                 </li>
 
-                                <li>
+                                <li onClick={()=> dispatch(openModal("createModal"))}>
                                     <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
                                         <svg
                                             className="size-4"
@@ -166,6 +169,28 @@ const Sidebar = () => {
                                         </svg>
 
                                         Profile
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
+                                        <svg
+                                            className="size-4"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        >
+                                            <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
+                                            <polyline points="10 17 15 12 10 7" />
+                                            <line x1="15" y1="12" x2="3" y2="12" />
+                                        </svg>
+                                        Logout
                                     </a>
                                 </li>
 
