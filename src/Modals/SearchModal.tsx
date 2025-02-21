@@ -1,20 +1,21 @@
 import { useState } from "react";
 import { closeModal } from "../Slice/modalSlice";
+import { useDispatch } from "react-redux";
 
 const SearchModal = () => {
-
+  const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
   const [searchHistory, setSearchHistory] = useState(["John Doe", "Jane Smith", "Alice Johnson"]);
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: any) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleHistoryClick = (item) => {
+  const handleHistoryClick = (item: string) => {
     setSearchTerm(item);
   };
 
-  const removeHistoryItem = (index) => {
+  const removeHistoryItem = (index: number) => {
     setSearchHistory(searchHistory.filter((_, i) => i !== index));
   };
 
@@ -24,7 +25,10 @@ const SearchModal = () => {
 
   return (
     <div className="p-4 w-96 ">
-      <h2 className="text-xl font-semibold">Search</h2>
+      <div className="w-full flex items-center justify-between p-2">
+        <h2 className="text-xl font-semibold">Search</h2>
+        <button onClick={() => dispatch(closeModal())} className="cursor-pointer">X</button>
+      </div>
       <input
         type="text"
         value={searchTerm}
@@ -68,7 +72,7 @@ const SearchModal = () => {
         </div>
       )}
 
-     
+
     </div>
   );
 };

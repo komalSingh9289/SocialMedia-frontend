@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { openModal } from "../Slice/modalSlice";
+import { openModal, openNotificationDrawer } from "../Slice/modalSlice";
 
 const Sidebar = () => {
     const dispatch = useDispatch();
@@ -103,7 +103,7 @@ const Sidebar = () => {
                                     </a>
                                 </li>
 
-                                <li>
+                                <li onClick={()=> dispatch(openNotificationDrawer())}>
                                     <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
                                         <svg
                                             className="size-4"
