@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { openModal, openNotificationDrawer } from "../Slice/modalSlice";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
     const dispatch = useDispatch();
@@ -32,10 +33,10 @@ const Sidebar = () => {
                         <div className="hs-accordion-group pb-0 px-2  w-full flex flex-col flex-wrap" data-hs-accordion-always-open>
                             <ul className="space-y-1">
                                 <li>
-                                    <a className="flex items-center text-lg gap-x-3 py-2 px-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-700 dark:text-white" href="#">
+                                    <NavLink to="/home" className="flex items-center text-lg gap-x-3 py-2 px-2.5 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-100 dark:bg-neutral-700 dark:text-white">
                                         <svg className="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
                                         Home
-                                    </a>
+                                    </NavLink>
                                 </li>
 
                                 <li onClick={()=> dispatch(openModal("searchModal"))}>
@@ -61,7 +62,7 @@ const Sidebar = () => {
                                 </li>
 
                                 <li>
-                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
+                                    <NavLink to="/messages" className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300">
                                         <svg
                                             className="size-4"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +78,7 @@ const Sidebar = () => {
                                             <path d="M21 11.5a8.38 8.38 0 0 1-1.25 4.42A8.5 8.5 0 0 1 12 20a8.38 8.38 0 0 1-4.42-1.25L3 21l1.25-4.42A8.38 8.38 0 0 1 4 11.5a8.5 8.5 0 0 1 17 0z" />
                                         </svg>
                                         Messages
-                                    </a>
+                                    </NavLink>
                                 </li>
 
                                 <li>
@@ -150,7 +151,7 @@ const Sidebar = () => {
                                 </li>
 
                                 <li>
-                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
+                                    <NavLink to="/profile" className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300">
                                         <svg
                                             className="size-4"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +170,7 @@ const Sidebar = () => {
                                         </svg>
 
                                         Profile
-                                    </a>
+                                    </NavLink>
                                 </li>
 
                                 <li>
