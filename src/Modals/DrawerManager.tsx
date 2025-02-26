@@ -3,6 +3,7 @@ import { RootState } from "../store/store";
 import NotificationDrawer from "./NotificationDrawer";
 import EditProfile from "./EditProfile";
 import Settings from "./Settings";
+import Posts from "./Posts";
 
 
 const DrawerManager = () => {
@@ -18,7 +19,9 @@ const DrawerManager = () => {
                 return <EditProfile />;
             case "settings":
                 return <Settings />;
-                
+            case "posts":
+                return <Posts />;
+               
             default:
                 return null;
         }
