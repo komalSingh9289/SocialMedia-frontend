@@ -82,7 +82,7 @@ const Sidebar = () => {
                                 </li>
 
                                 <li>
-                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg cursor-pointer text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" >
+                                    <NavLink  to="/reels" className="flex items-center gap-x-3 py-2 px-2.5 text-lg cursor-pointer text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" >
                                         <svg
                                             className="size-4"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@ const Sidebar = () => {
                                             <path d="M10 14l4-2v4l-4-2z" />
                                         </svg>
                                         Reels
-                                    </a>
+                                    </NavLink>
                                 </li>
 
                                 <li onClick={()=> dispatch(openDrawer("notification"))}>

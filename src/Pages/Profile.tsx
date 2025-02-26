@@ -63,7 +63,7 @@ const Profile = () => {
               <img
                 src={`https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg`}
                 alt={`Post ${index + 1}`}
-                className="w-full h-44 object-cover"
+                className="w-full h-44 object-cover cursor-pointer"
                 onClick={() => dispatch(openDrawer("posts"))}
               />
             </div>

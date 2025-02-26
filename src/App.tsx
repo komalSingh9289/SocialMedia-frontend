@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import Messages from "./Pages/Messages";
 import Profile from "./Pages/Profile";
 import Layout from "./Components/Layout";
+import Reels from "./Pages/Reels";
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/messages" element={<Messages />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/reels" element={<Reels />} />
         </Route>
       </Routes>
     </Router>
