@@ -2,14 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface ModalState {
     activeModal: string | null;
-    isNotificationDrawerOpen: boolean;
+    activeDrawer: string | null; 
 }
 
 const initialState: ModalState = {
     activeModal: null,
-    isNotificationDrawerOpen: false,
-
-}
+    activeDrawer: null,
+};
 
 const ModalSlice = createSlice({
     name: "modal",
@@ -21,15 +20,14 @@ const ModalSlice = createSlice({
         closeModal: (state) => {
             state.activeModal = null;
         },
-        openNotificationDrawer: (state) => {
-            state.isNotificationDrawerOpen = true;
-          },
-          closeNotificationDrawer: (state) => {
-            state.isNotificationDrawerOpen = false;
-          },
+        openDrawer: (state, action: PayloadAction<"notification" | "profile">) => {
+            state.activeDrawer = action.payload;
+        },
+        closeDrawer: (state) => {
+            state.activeDrawer = null;
+        },
     }
 });
 
-export const {openModal, closeModal, openNotificationDrawer, closeNotificationDrawer} = ModalSlice.actions;
-
+export const { openModal, closeModal, openDrawer, closeDrawer } = ModalSlice.actions;
 export default ModalSlice.reducer;

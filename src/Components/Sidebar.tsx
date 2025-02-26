@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { openModal, openNotificationDrawer } from "../Slice/modalSlice";
+import { openDrawer, openModal } from "../Slice/modalSlice";
 import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
@@ -40,7 +40,7 @@ const Sidebar = () => {
                                 </li>
 
                                 <li onClick={()=> dispatch(openModal("searchModal"))}>
-                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
+                                    <a className="flex items-center cursor-pointer gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300">
                                         <svg
                                             className="size-4"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ const Sidebar = () => {
                                 </li>
 
                                 <li>
-                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
+                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg cursor-pointer text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" >
                                         <svg
                                             className="size-4"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -104,8 +104,8 @@ const Sidebar = () => {
                                     </a>
                                 </li>
 
-                                <li onClick={()=> dispatch(openNotificationDrawer())}>
-                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
+                                <li onClick={()=> dispatch(openDrawer("notification"))}>
+                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg cursor-pointer text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300">
                                         <svg
                                             className="size-4"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ const Sidebar = () => {
                                 </li>
 
                                 <li onClick={()=> dispatch(openModal("createModal"))}>
-                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
+                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg cursor-pointer text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" >
                                         <svg
                                             className="size-4"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +174,7 @@ const Sidebar = () => {
                                 </li>
 
                                 <li>
-                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300" href="#">
+                                    <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg cursor-pointer text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300">
                                         <svg
                                             className="size-4"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -202,8 +202,6 @@ const Sidebar = () => {
 
                 </div>
             </div>
-
-
 
             <div className="sm:hs-overlay-layout-open:ms-64 min-h-[640px] bg-white transition-all duration-300 dark:bg-neutral-800">
 

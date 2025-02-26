@@ -7,7 +7,7 @@ import CreateModal from "./CreateModal";
 
 const ModalManager = () => {
     const activeModal = useSelector((state: RootState) => state.modal.activeModal);
-   // const dispatch = useDispatch();
+
 
     if(!activeModal) return null;
 
@@ -26,7 +26,7 @@ const ModalManager = () => {
     console.log(renderModal)
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black/30">
+        <div className="fixed inset-0 z-10 flex items-center justify-center bg-black/30">
       <div className="bg-white p-4 rounded-lg relative">
         {renderModal()}
       </div>

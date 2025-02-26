@@ -1,10 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import { closeNotificationDrawer } from "../Slice/modalSlice";
-import { RootState } from "../store/store";
+import { useDispatch } from "react-redux";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 import isToday from "dayjs/plugin/isToday";
 import isYesterday from "dayjs/plugin/isYesterday";
+import { closeDrawer } from "../Slice/modalSlice";
 
 dayjs.extend(relativeTime);
 dayjs.extend(isToday);
@@ -40,11 +39,10 @@ const categorizeNotifications = () => {
 
 const NotificationDrawer = () => {
     const dispatch = useDispatch();
-    const isOpen = useSelector((state: RootState) => state.modal.isNotificationDrawerOpen);
     const { today, yesterday, thisWeek } = categorizeNotifications();
 
     return (
-        <div className={`fixed top-0 right-0 w-[380px] h-full bg-white dark:bg-neutral-900 shadow-lg transform ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 z-50`}>
+        <div>
             {/* Header */}
             <div className="p-4 flex justify-between items-center border-b border-gray-200 dark:border-neutral-800">
                 <h2 className="text-lg font-semibold flex items-center gap-2">
@@ -53,7 +51,7 @@ const NotificationDrawer = () => {
                     </svg>
                     Notifications
                 </h2>
-                <button onClick={() => dispatch(closeNotificationDrawer())} className="text-gray-500 hover:text-gray-700 dark:text-neutral-400">
+                <button onClick={() => dispatch(closeDrawer())} className="text-gray-500 hover:text-gray-700 dark:text-neutral-400">
                     ✕
                 </button>
             </div>
