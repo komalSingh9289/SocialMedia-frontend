@@ -20,7 +20,7 @@ const ModalSlice = createSlice({
         closeModal: (state) => {
             state.activeModal = null;
         },
-        openDrawer: (state, action: PayloadAction<"notification" | "profile">) => {
+        openDrawer: (state, action: PayloadAction<"notification" | "profile" | "settings">) => {
             state.activeDrawer = action.payload;
         },
         closeDrawer: (state) => {

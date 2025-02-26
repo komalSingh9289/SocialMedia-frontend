@@ -31,7 +31,8 @@ const Profile = () => {
             <div className="flex items-center space-x-3 mt-4">
               <button className="border px-4 py-1 rounded-md text-sm hover:bg-gray-800 hover:text-gray-100"
               onClick={() => dispatch(openDrawer("profile"))}>Edit Profile</button>
-              <FaCog className="text-xl cursor-pointer" />
+              <FaCog className="text-xl cursor-pointer text-gray-700 hover:text-gray-800" 
+              onClick={() => dispatch(openDrawer("settings"))}/>
             </div>
           </div>
         </div>

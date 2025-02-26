@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import NotificationDrawer from "./NotificationDrawer";
 import EditProfile from "./EditProfile";
+import Settings from "./Settings";
 
 
 const DrawerManager = () => {
@@ -15,7 +16,9 @@ const DrawerManager = () => {
                 return <NotificationDrawer />;
             case "profile":
                 return <EditProfile />;
-
+            case "settings":
+                return <Settings />;
+                
             default:
                 return null;
         }
