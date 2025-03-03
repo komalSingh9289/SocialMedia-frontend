@@ -1,7 +1,11 @@
 
 import { MdMoreHoriz } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { openModal } from "../Slice/modalSlice";
 
 const Feeds = () => {
+    const dispatch = useDispatch();
+
     const posts = [
         {
             id: 1,
@@ -68,6 +72,7 @@ const Feeds = () => {
                     {/* Action Buttons */}
                     <div className="flex justify-between p-4 text-xl">
                         <div className="flex space-x-4">
+                            {/* heart */}
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -81,6 +86,7 @@ const Feeds = () => {
                                 <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1 7.8 7.8 7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z" />
                             </svg>
 
+                            {/* comments */}
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -90,6 +96,7 @@ const Feeds = () => {
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                                 className="size-6 cursor-pointer"
+                                onClick={() => dispatch(openModal("comments"))}
                             >
                                 <path d="M21 15a2 2 0 0 1-2 2H8l-4 4V5a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2z" />
                             </svg>
@@ -109,7 +116,23 @@ const Feeds = () => {
                             </svg>
 
                         </div>
-                        
+
+                        <div>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="1"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                className="size-6 cursor-pointer"
+                            >
+                                <path d="M6 3h12a2 2 0 0 1 2 2v16l-8-5-8 5V5a2 2 0 0 1 2-2z" />
+                            </svg>
+
+                        </div>
+
                     </div>
 
                     {/* Likes and Caption */}

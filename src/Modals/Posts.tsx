@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { closeDrawer } from "../Slice/modalSlice";
+import Feeds from "../Components/Feeds";
 
 const Posts = () => {
     const dispatch = useDispatch();
@@ -13,6 +14,10 @@ const Posts = () => {
                     ✕
                 </button>
             </div>
+            <div className="p-6 h-full overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-700">
+                <Feeds />
+            </div>
+
         </div>
     )
 }
