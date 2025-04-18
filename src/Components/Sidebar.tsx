@@ -1,9 +1,15 @@
 import { useDispatch } from "react-redux";
 import { openDrawer, openModal } from "../Slice/modalSlice";
 import { NavLink } from "react-router-dom";
+import { useClerk } from "@clerk/clerk-react";
 
 const Sidebar = () => {
     const dispatch = useDispatch();
+    const { signOut } = useClerk();
+
+    const handleLogout = () => {
+      signOut(); // This will log the user out and redirect them to the sign-in page
+    };
     return (
         <>
             <div id="hs-sidebar-content-push" className="hs-overlay [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 w-64
@@ -173,7 +179,7 @@ const Sidebar = () => {
                                     </NavLink>
                                 </li>
 
-                                <li>
+                                <li onClick={handleLogout}>
                                     <a className="flex items-center gap-x-3 py-2 px-2.5 text-lg cursor-pointer text-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-400 dark:hover:text-neutral-300">
                                         <svg
                                             className="size-4"
